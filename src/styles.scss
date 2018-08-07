@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.img-fluid {
+  margin: 0 auto;
+  max-width: 50%;
+  @media all and (max-width: 991px) {
+    max-width: 75%;
+  }
+}
+.navbar.navbar-1 .navbar-toggler-icon {
+  background-image: url('https://mdbootstrap.com/img/svg/hamburger1.svg?color=6a1b9a');
+}
+.card .card-body .card-text.large {
+  font-size: 1.2rem;
+}
