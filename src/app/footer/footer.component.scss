@@ -1,0 +1,16 @@
+footer a.underline {
+  text-decoration: underline;
+}
+.footer-links {
+  margin-left: 5rem;
+
+  @media (max-width: 768px) {
+    margin-left: initial;
+  }
+}
+hr.hidden-md-up {
+  width: 0;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
