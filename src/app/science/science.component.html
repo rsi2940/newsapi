@@ -10,13 +10,11 @@
 
     <div class="view view-cascade overlay waves-light"
          mdbWavesEffect>
-      <picture>
-        <source srcset="../../favicon.png"
-                type="png">
-        <mdb-card-img src={{article.urlToImage}}
-                      class="container"
-                      title="{{article.title}}"></mdb-card-img>
-      </picture>
+
+      <mdb-card-img src={{article.urlToImage}}
+                    class="container"
+                    *ngIf="article.urlToImage"></mdb-card-img>
+
       <!-- *ngIf="article.urlToImage" -->
       <a href="{{article.url}}"
          target="_blank"
