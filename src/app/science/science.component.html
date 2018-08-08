@@ -1,6 +1,10 @@
+<div class="jumbotron jumbotron-fluid wow zoomIn light-green">
+  <div class="container text-center jumbotron-text">
+    <h1 class="display-4">{{apiCategory | uppercase}} HEADLINES</h1>
+  </div>
+</div>
 <div class="container"
      *ngIf="dataObject">
-
   <mdb-card cascade="true"
             wider="true"
             reverse="true"
@@ -31,9 +35,14 @@
 
       <!--Title-->
       <mdb-card-title>
-        <h4>
-          <strong>{{article.title}}</strong>
-        </h4>
+        <a href="{{article.url}}"
+           target="_blank"
+           rel="noopener"
+           class="no-link-color">
+          <h4>
+            <strong>{{article.title}}</strong>
+          </h4>
+        </a>
       </mdb-card-title>
       <div class="container my-3">
         <div class="row indigo-text">
