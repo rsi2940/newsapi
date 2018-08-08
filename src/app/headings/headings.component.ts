@@ -25,7 +25,7 @@ export class HeadingsComponent implements OnInit {
       )
       .subscribe(data => {
         this.dataObject = data;
-        console.log(data);
+        // console.log(data);
         this.dataArticles = this.dataObject.articles;
       });
   }

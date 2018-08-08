@@ -8,7 +8,8 @@ footer a.underline {
     margin-left: initial;
   }
 }
-hr.hidden-md-up {
+hr.hr-style {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
   width: 0;
   @media (max-width: 768px) {
     width: 100%;

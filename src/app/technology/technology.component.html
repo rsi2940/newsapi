@@ -1,3 +1,75 @@
-<p>
-  technology works!
-</p>
+<div class="container"
+     *ngIf="dataObject">
+
+  <mdb-card cascade="true"
+            wider="true"
+            reverse="true"
+            class="my-4"
+            *ngFor="let article of dataArticles">
+    <!--Card image-->
+
+    <div class="view view-cascade overlay waves-light"
+         mdbWavesEffect>
+      <mdb-card-img src={{article.urlToImage}}
+                    class="container"
+                    *ngIf="article.urlToImage"></mdb-card-img>
+      <a href="{{article.url}}"
+         target="_blank"
+         rel="noopener">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--/Card image-->
+
+    <!-- Card content -->
+    <mdb-card-body cascade="true"
+                   class="text-center">
+
+      <!--Title-->
+      <mdb-card-title>
+        <h4>
+          <strong>{{article.title}}</strong>
+        </h4>
+      </mdb-card-title>
+      <div class="container my-3">
+        <div class="row indigo-text">
+          <div class="col-md-4">
+            <h5>
+              <strong>Source: </strong>
+              <a href="{{article.url}}"
+                 target="_blank"
+                 rel="noopener">{{article.source.name}}</a>
+            </h5>
+
+          </div>
+          <div class="col-md-4">
+            <h5>
+              <strong *ngIf="article.author"> Author: </strong>
+              <span>{{article.author}}</span>
+            </h5>
+          </div>
+
+          <div class="col-md-4">
+            <h6>
+              <strong class="lead"> Date: </strong>
+              <span>{{article.publishedAt | date}}</span>
+            </h6>
+          </div>
+        </div>
+
+      </div>
+
+      <mdb-card-text class="large">
+        {{article.description}}
+      </mdb-card-text>
+      <h5 class="indigo-text">
+        <a href="{{article.url}}"
+           target="_blank"
+           rel="noopener">
+          <strong>More...</strong>
+        </a>
+      </h5>
+    </mdb-card-body>
+  </mdb-card>
+</div>

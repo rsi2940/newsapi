@@ -4,7 +4,7 @@
   <!-- Navbar brand -->
   <mdb-navbar-brand>
     <a class="navbar-brand"
-       href="#">News Collection</a>
+       routerLink="/headlines">News Collection</a>
   </mdb-navbar-brand>
 
   <!-- Collapsible content -->
@@ -12,27 +12,41 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item"
+          routerLinkActive="active">
         <a class="nav-link waves-light"
-           mdbWavesEffect>Headlines
-          <span class="sr-only">(current)</span>
+           mdbWavesEffect
+           routerLink="/business">Business
+          <span *ngIf="isActiveLink('/business')"
+                class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"
+          routerLinkActive="active">
         <a class="nav-link waves-light"
-           mdbWavesEffect>Business</a>
+           mdbWavesEffect
+           routerLink="/science">Science
+          <span *ngIf="isActiveLink('/science')"
+                class="sr-only">(current)</span>
+        </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"
+          routerLinkActive="active">
         <a class="nav-link waves-light"
-           mdbWavesEffect>Science</a>
+           mdbWavesEffect
+           routerLink="/technology">Technology
+          <span *ngIf="isActiveLink('/technology')"
+                class="sr-only">(current)</span>
+        </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"
+          routerLinkActive="active">
         <a class="nav-link waves-light"
-           mdbWavesEffect>Technology</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light"
-           mdbWavesEffect>Sports</a>
+           mdbWavesEffect
+           routerLink="/sports">Sports
+          <span *ngIf="isActiveLink('/sports')"
+                class="sr-only">(current)</span>
+        </a>
       </li>
       <!-- Dropdown -->
       <!-- <li class="nav-item dropdown"
