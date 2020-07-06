@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class NewsApiService {
-  private apiUrl = "https://api.nytimes.com/svc/topstories/v2/";
-  private apiKey = ".json?api-key=YNGrW2g9HqBo1ilYzdbS52vUAWRAJtFj";
-  private apiCategory = "us";
+  private apiUrl = 'https://api.nytimes.com/svc/topstories/v2/';
+  private apiKey = '.json?api-key=YNGrW2g9HqBo1ilYzdbS52vUAWRAJtFj';
+  private apiCategory = 'us';
   constructor(private http: HttpClient) {}
   // getNews(category = this.apiCategory) {
   //   this.http
