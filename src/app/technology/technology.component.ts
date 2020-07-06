@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { NewsApiService } from "../news-api.service";
+import { Component, OnInit } from '@angular/core';
+import { NewsApiService } from '../news-api.service';
 
 @Component({
-  selector: "app-technology",
-  templateUrl: "./technology.component.html",
-  styleUrls: ["./technology.component.scss"],
+  selector: 'app-technology',
+  templateUrl: './technology.component.html',
+  styleUrls: ['./technology.component.scss'],
 })
 export class TechnologyComponent implements OnInit {
-  apiUrl = "https://api.nytimes.com/svc/topstories/v2/";
-  apiKey = ".json?api-key=YNGrW2g9HqBo1ilYzdbS52vUAWRAJtFj";
-  apiCategory = "technology";
+  apiUrl = 'https://api.nytimes.com/svc/topstories/v2/';
+  apiKey = '.json?api-key=YNGrW2g9HqBo1ilYzdbS52vUAWRAJtFj';
+  apiCategory = 'technology';
 
   dataObject: any = null;
   dataArticles: any = [];

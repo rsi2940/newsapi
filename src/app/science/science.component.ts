@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { NewsApiService } from "../news-api.service";
+import { Component, OnInit } from '@angular/core';
+import { NewsApiService } from '../news-api.service';
 
 @Component({
-  selector: "app-science",
-  templateUrl: "./science.component.html",
-  styleUrls: ["./science.component.scss"],
+  selector: 'app-science',
+  templateUrl: './science.component.html',
+  styleUrls: ['./science.component.scss'],
 })
 export class ScienceComponent implements OnInit {
-  apiCategory = "science";
+  apiCategory = 'science';
 
   dataObject = null;
   dataArticles = [];
