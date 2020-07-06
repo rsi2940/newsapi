@@ -7,10 +7,27 @@
   }
 }
 .navbar.navbar-1 .navbar-toggler-icon {
-  background-image: url('https://mdbootstrap.com/img/svg/hamburger1.svg?color=6a1b9a');
+  background-image: url("https://mdbootstrap.com/img/svg/hamburger1.svg?color=6a1b9a");
 }
-.card .card-body .card-text.large {
-  font-size: 1.2rem;
+.mdb-cards {
+  min-height: 50vh;
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.article-image img {
+  max-height: 150px;
+}
+.card {
+  .card {
+    box-shadow: none;
+  }
+  .card-body .card-text.large {
+    font-size: 1.2rem;
+  }
 }
 .no-link-color {
   text-decoration: none;
@@ -18,4 +35,7 @@
 }
 .jumbotron-text {
   color: rgba(253, 253, 253, 0.637);
+}
+.indigo-text h5 {
+  text-transform: capitalize;
 }

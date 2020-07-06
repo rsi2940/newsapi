@@ -2,12 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { NewsApiService } from "../news-api.service";
 
 @Component({
-  selector: "app-headings",
-  templateUrl: "./headings.component.html",
-  styleUrls: ["./headings.component.scss"],
+  selector: "app-business",
+  templateUrl: "./business.component.html",
+  styleUrls: ["./business.component.scss"],
 })
-export class HeadingsComponent implements OnInit {
-  apiCategory = "world";
+export class BusinessComponent implements OnInit {
+  apiCategory = "business";
 
   dataObject = null;
   dataArticles = [];

@@ -1,32 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from "@angular/core";
+import { NewsApiService } from "../news-api.service";
 
 @Component({
-  selector: 'app-technology',
-  templateUrl: './technology.component.html',
-  styleUrls: ['./technology.component.scss']
+  selector: "app-technology",
+  templateUrl: "./technology.component.html",
+  styleUrls: ["./technology.component.scss"],
 })
 export class TechnologyComponent implements OnInit {
-  apiUrl = 'https://newsapi.org/v2/';
-  apiHeadline = 'top-headlines';
-  apiCategory = 'technology';
-  apiKey = '62430d56912f462fbf9d9379209a2418';
+  apiUrl = "https://api.nytimes.com/svc/topstories/v2/";
+  apiKey = ".json?api-key=YNGrW2g9HqBo1ilYzdbS52vUAWRAJtFj";
+  apiCategory = "technology";
 
-  dataObject = null;
-  dataArticles = [];
-  constructor(private http: HttpClient) {}
+  dataObject: any = null;
+  dataArticles: any = [];
+  constructor(private api: NewsApiService) {}
 
-  ngOnInit() {
-    this.http
-      .get(
-        `${this.apiUrl}${this.apiHeadline}?country=us&category=${
-          this.apiCategory
-        }&apiKey=${this.apiKey}`
-      )
-      .subscribe(data => {
-        this.dataObject = data;
-        // console.log(data);
-        this.dataArticles = this.dataObject.articles;
-      });
+  async ngOnInit() {
+    // this.http
+    //   .get(`${this.apiUrl}${this.apiCategory}${this.apiKey}`)
+    //   .subscribe((data) => {
+    //     this.dataObject = data;
+    //     // console.log(data);
+    //     this.dataArticles = this.dataObject.articles;
+    //   });
+    this.dataObject = await this.api.getNews(this.apiCategory);
+    console.log(this.dataObject);
+    this.dataArticles = await this.dataObject.results;
+    console.log(this.dataArticles);
   }
 }

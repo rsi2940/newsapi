@@ -1,32 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from "@angular/core";
+import { NewsApiService } from "../news-api.service";
 
 @Component({
-  selector: 'app-science',
-  templateUrl: './science.component.html',
-  styleUrls: ['./science.component.scss']
+  selector: "app-science",
+  templateUrl: "./science.component.html",
+  styleUrls: ["./science.component.scss"],
 })
 export class ScienceComponent implements OnInit {
-  apiUrl = 'https://newsapi.org/v2/';
-  apiHeadline = 'top-headlines';
-  apiCategory = 'science';
-  apiKey = '62430d56912f462fbf9d9379209a2418';
+  apiCategory = "science";
 
   dataObject = null;
   dataArticles = [];
-  constructor(private http: HttpClient) {}
+  constructor(private api: NewsApiService) {}
 
-  ngOnInit() {
-    this.http
-      .get(
-        `${this.apiUrl}${this.apiHeadline}?country=us&category=${
-          this.apiCategory
-        }&apiKey=${this.apiKey}`
-      )
-      .subscribe(data => {
-        this.dataObject = data;
-        // console.log(data);
-        this.dataArticles = this.dataObject.articles;
-      });
+  async ngOnInit() {
+    this.dataObject = await this.api.getNews(this.apiCategory);
+    console.log(this.dataObject);
+    this.dataArticles = await this.dataObject.results;
+    console.log(this.dataArticles);
   }
 }
