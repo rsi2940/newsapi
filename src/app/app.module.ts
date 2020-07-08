@@ -16,6 +16,8 @@ import { TechnologyComponent } from './technology/technology.component';
 import { SportsComponent } from './sports/sports.component';
 import { NewsApiService } from './news-api.service';
 import { BusinessComponent } from './business/business.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // routes declaration
 
@@ -44,6 +46,7 @@ const routes: Routes = [
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(routes),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [NewsApiService],
