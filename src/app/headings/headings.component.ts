@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { NewsApiService } from '../news-api.service';
+import { Component, OnInit } from "@angular/core";
+import { NewsApiService } from "../news-api.service";
 
 @Component({
-  selector: 'app-headings',
-  templateUrl: './headings.component.html',
-  styleUrls: ['./headings.component.scss'],
+  selector: "app-headings",
+  templateUrl: "./headings.component.html",
+  styleUrls: ["./headings.component.scss"],
 })
 export class HeadingsComponent implements OnInit {
-  apiCategory = 'world';
+  apiCategory = "world";
 
   dataObject = null;
   dataArticles = [];
@@ -15,8 +15,6 @@ export class HeadingsComponent implements OnInit {
 
   async ngOnInit() {
     this.dataObject = await this.api.getNews(this.apiCategory);
-    console.log(this.dataObject);
     this.dataArticles = await this.dataObject.results;
-    console.log(this.dataArticles);
   }
 }
