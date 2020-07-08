@@ -1,6 +1,6 @@
 # Newsapi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5. Updated to Angular 10.x, MDBootstrap 9.x and added PWA features.
 
 ## Development server
 
